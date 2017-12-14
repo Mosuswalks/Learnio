@@ -13,7 +13,7 @@ return [
     |
     */
 
-    'name' => env('APP_NAME', 'Laravel'),
+    'name' => env('APP_NAME', 'Learnio'),
 
     /*
     |--------------------------------------------------------------------------
@@ -171,11 +171,11 @@ return [
         /*
          * Application Service Providers...
          */
-        App\Providers\AppServiceProvider::class,
-        App\Providers\AuthServiceProvider::class,
-        // App\Providers\BroadcastServiceProvider::class,
-        App\Providers\EventServiceProvider::class,
-        App\Providers\RouteServiceProvider::class,
+        Learnio\Providers\AppServiceProvider::class,
+        Learnio\Providers\AuthServiceProvider::class,
+        // Learnio\Providers\BroadcastServiceProvider::class,
+        Learnio\Providers\EventServiceProvider::class,
+        Learnio\Providers\RouteServiceProvider::class,
 
     ],
 
