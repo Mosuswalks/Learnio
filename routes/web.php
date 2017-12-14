@@ -12,13 +12,16 @@
 */
 
 Route::get('/', function () {
-    return view('welcome', [
 
-        'name' => 'Momo'
-        
-    ]);
+    //$users = DB::table('users')->where('email', '=', 'john@hotmail.com')->get();
+    
+    return view('welcome');
 });
 
 Route::get('about', function(){
     return view('about');
 });
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
