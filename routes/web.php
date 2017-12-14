@@ -12,7 +12,11 @@
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('welcome', [
+
+        'name' => 'Momo'
+        
+    ]);
 });
 
 Route::get('about', function(){

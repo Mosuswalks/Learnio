@@ -79,7 +79,7 @@
 
             <div class="content">
                 <div class="title m-b-md">
-                    Momo is King
+                    {{$name}} is King
                 </div>
 
                 <div class="links">
