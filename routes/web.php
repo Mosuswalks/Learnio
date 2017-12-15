@@ -17,15 +17,6 @@ Route::get('/', function () {
     
 });
 
-Route::get('/forum', function(){
-
-    $categories = App\Categories::all();
-
-    return view('forum',compact('categories'));
-
-});
-
-
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
