@@ -10,6 +10,7 @@
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     <title>{{ config('app.name') }}</title>
 =======
     <title>{{ config('app.name', 'Laravel') }}</title>
@@ -17,6 +18,9 @@
 =======
     <title>{{ config('app.name') }}</title>
 >>>>>>> 191d8a38bc8541dfb3a704e6e5f6aaa5d0ef7030
+=======
+    <title>{{ config('app.name') }}</title>
+>>>>>>> dd6ad8c6ec84d27c2a610045f709de3059e551fe
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
@@ -37,18 +41,10 @@
 
                     <!-- Branding Image -->
                     <a class="navbar-brand" href="{{ url('/') }}">
-<<<<<<< HEAD
-<<<<<<< HEAD
+
                         {{ config('app.name', 'Learnio') }} 
-=======
-                        {{ config('app.name', 'Laravel') }}
->>>>>>> MyBranch
-=======
-                    
-                        {{ config('app.name', 'Learnio') }} 
-                        
->>>>>>> 191d8a38bc8541dfb3a704e6e5f6aaa5d0ef7030
-                    </a>
+
+                   </a>
                 </div>
 
                 <div class="collapse navbar-collapse" id="app-navbar-collapse">
