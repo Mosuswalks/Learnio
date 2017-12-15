@@ -8,7 +8,11 @@
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
+<<<<<<< HEAD
     <title>{{ config('app.name') }}</title>
+=======
+    <title>{{ config('app.name', 'Laravel') }}</title>
+>>>>>>> MyBranch
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
@@ -29,7 +33,11 @@
 
                     <!-- Branding Image -->
                     <a class="navbar-brand" href="{{ url('/') }}">
+<<<<<<< HEAD
                         {{ config('app.name', 'Learnio') }} 
+=======
+                        {{ config('app.name', 'Laravel') }}
+>>>>>>> MyBranch
                     </a>
                 </div>
 

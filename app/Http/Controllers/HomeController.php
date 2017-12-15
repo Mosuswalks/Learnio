@@ -1,6 +1,10 @@
 <?php
 
+<<<<<<< HEAD
 namespace Learnio\Http\Controllers;
+=======
+namespace App\Http\Controllers;
+>>>>>>> MyBranch
 
 use Illuminate\Http\Request;
 
