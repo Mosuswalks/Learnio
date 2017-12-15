@@ -12,14 +12,17 @@
 */
 
 Route::get('/', function () {
-
-    //$users = DB::table('users')->where('email', '=', 'john@hotmail.com')->get();
     
     return view('welcome');
+    
 });
 
-Route::get('about', function(){
-    return view('about');
+Route::get('/forum', function(){
+
+    $categories = App\Categories::all();
+
+    return view('forum',compact('categories'));
+
 });
 
 Auth::routes();

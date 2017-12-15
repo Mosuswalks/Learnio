@@ -29,7 +29,9 @@
 
                     <!-- Branding Image -->
                     <a class="navbar-brand" href="{{ url('/') }}">
+                    
                         {{ config('app.name', 'Learnio') }} 
+                        
                     </a>
                 </div>
 
