@@ -1,4 +1,4 @@
-@extends('layout')
+@extends('layouts.app')
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -8,6 +8,7 @@
     <title>Document</title>
 </head>
 <body>
+
     <h1>About</h1>
 </body>
 </html>

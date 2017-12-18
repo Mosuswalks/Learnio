@@ -11,11 +11,10 @@
 |
 */
 
-Route::get('/', function () {
-    
-    return view('welcome');
-    
-});
+Route::get('/threads', 'ThreadsController@index');
+Route::get('/threads/{thread}', 'ThreadsController@show');
+Route::get('/categories', 'CategoriesController@index');
+Route::get('/categories/{category}', 'CategoriesController@show');
 
 Auth::routes();
 

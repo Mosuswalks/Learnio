@@ -2,18 +2,13 @@
 
 @section('content')
 <div class="panel" style="width: 300px; height: 500px;}">
-    <ul>
-        
+
         @foreach ($categories as $category)
 
-            <li>
-            
-            <a>{{ $category->subject }}</a>
-            
-            </li>
+           <li style="list-style: none; padding-bottom: 10px" class="col-sm-12"> <button class="btn btn-primary">{{ $category->subject }}</button></li>
 
         @endforeach
-    </ul>
+
 </div>
 
 @endsection

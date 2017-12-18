@@ -14,7 +14,7 @@
                         </div>
                     @endif
 
-                    You are logged in!
+                    <button class="btn btn-primary">Sumit</button>
                 </div>
             </div>
         </div>

@@ -1,0 +1,16 @@
+body{
+    background-color: #3221;
+    min-width: 100%;
+    min-height: 100%;
+    position: fixed; 
+    top: 0; 
+    left: 0; 
+    
+}
+
+
+
+table{
+    background-color: #fff;
+    color: #45b3e7;
+}

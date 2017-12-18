@@ -15,18 +15,8 @@ class CreateUsersTable extends Migration
     {
         Schema::create('users', function (Blueprint $table) {
             $table->increments('id');
-<<<<<<< HEAD
-<<<<<<< HEAD
-            $table->string('username');
-            $table->string('email')->unique();
-=======
-            $table->string('name');
-            $table->string('email', '191')->unique();
->>>>>>> MyBranch
-=======
-            $table->string('name');
-            $table->string('email', '191')->unique();
->>>>>>> 191d8a38bc8541dfb3a704e6e5f6aaa5d0ef7030
+            $table->string('user_name', '191')->unique(); 
+            $table->string('email', '191')->unique();                      
             $table->string('password');
             $table->softDeletes('softDeletes');
             $table->rememberToken();

@@ -21,6 +21,7 @@
                 margin: 0;
             }
 
+
             .full-height {
                 height: 100vh;
             }
@@ -83,6 +84,7 @@
                 </div>
                 <div>
                     <p>Where learning takes place</p>
+
                 </div>
             </div>
         </div>
