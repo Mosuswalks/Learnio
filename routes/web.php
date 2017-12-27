@@ -11,8 +11,9 @@
 |
 */
 
-Route::get('/threads', 'ThreadsController@index');
-Route::get('/threads/{thread}', 'ThreadsController@show');
+Route::get('/posts', 'PostsController@index');
+Route::get('/posts/{posts}', 'PostsController@show');
+Route::get('/posts', 'PostsController@index');
 Route::get('/categories', 'CategoriesController@index');
 Route::get('/categories/{category}', 'CategoriesController@show');
 
