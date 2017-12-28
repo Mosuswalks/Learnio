@@ -1,19 +1,14 @@
-@extends('layouts.app')
+@extends('layouts.master')
 
 @section('content')
-<div class="container">
-    <div class="row">   
-        <div class="list-group col-sm-3 mx-auto">
-            <a class="list-group-item active text-center"><h1>Categories</h1></a>
+<div class="container"> 
+        <div class="panel col-sm-12 mx-auto">
+            <h1 class="text-center">Categories</h1>
+            <hr>
                 @foreach ($categories as $category)
-                    <a href="/categories/{{ $category->id }}" class="list-group-item list-group-item-action"><h3> {{ $category->subject }}</h3><h6>{{ $category->description }}</h6></a>
+                    <a class="col-sm-3 list-group-item" href="/categories/{{ $category->id }}" class="list-group-item list-group-item-action"><h3> {{ $category->title }}</h3><h6>{{ $category->description }}</h6></a>
                 @endforeach
         </div>
-        <div class="col col-sm-8">
-            <a class="list-group-item">This is a test</a>
-        </div>
-    </div>
-    
 </div>
 
 @endsection 

@@ -1,18 +1,18 @@
-@extends('layouts.app')
+@extends('layouts.master')
 
 @section('content')
     <div class="container">
     <div class="list-group">
         <div class="panel panel-default text-center ">
-            <h1 class="">{{ $category->subject }}</h1>
+            <h1 class="">{{ $category->title }}</h1>
                     <hr>
             <p>{{ $category->description}}</p>
         </div>
-        </div>
-    </div>
-    <div class="container">
-        <div class="panel panel-clickable">
-        <h2>This is a test</h2> 
+        @foreach ($postsForCategory as $post)
+            <div class="panel">
+                <a href="#"><h2>{{$post->title}}</h2></a>
+            </div>
+        @endforeach
         </div>
     </div>
 @endsection

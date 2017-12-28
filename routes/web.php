@@ -12,11 +12,10 @@
 */
 
 Route::get('/posts', 'PostsController@index');
-Route::get('/posts/{posts}', 'PostsController@show');
 Route::get('/posts', 'PostsController@index');
 Route::get('/categories', 'CategoriesController@index');
 Route::get('/categories/{category}', 'CategoriesController@show');
 
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/', 'HomeController@index')->name('home');

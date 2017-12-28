@@ -1,22 +1,17 @@
 
-@extends('layouts.app')
+@extends('layouts.master')
 
 @section('content')
 <div class="container">
-    <table class="table table-hover">
-        <thead>
-            <td></td>
-        </thead>
-        @foreach ($threads as $thread)
-            <tr>
-                <td>
-                    <div class="panel">
-                    <h1 class="panel-title">{{ $thread->title }}</h1>
-                    <p class="panel-body">{{ $thread->body }}</p>
-                </td>
-            <tr>
+    <div class="list-group">
+
+        @foreach ($posts as $post)
+                <div class="list-group-item"><a href="posts/{{ $post->id }}">
+                <h1>{{ $post->title }}</h1></a>
+                </div>
         @endforeach
-    </table>
+
+    </div>
 </div>
 
 @endsection
