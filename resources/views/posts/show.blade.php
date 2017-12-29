@@ -2,10 +2,18 @@
 
 @section('content')
     <div class="container">
-        <div class="panel panel-title">
-        @foreach ($posts as $post)
-                    <a class="col-sm-3 list-group-item" href="/categories/{{ $category->title }}" class="list-group-item list-group-item-action"><h3> {{ $post->title }}</h3><h6>{{ $post->description }}</h6></a>
-                @endforeach
+        <div class="panel col-md-10 col-md-offset-1">
+            <div class="panel-title">
+            <h1 class="text-center">{{ $post->title }}</h1>
+            <h4 class="text-center">By: {{ $user->name }}</h5>
+            <h4 class="text-center">Posted on: {{ Carbon\Carbon::parse($post->created_at)->format('d/m/Y') }}</h5>
+            </div>
+            <hr>
+            <div class="panel-body">
+
+                <p class=''>{{$post->body}}</p>
+
+            </div>
         </div>
     </div>
 @endsection

@@ -5,6 +5,8 @@ body{
     position: fixed; 
     top: 0; 
     left: 0; 
+    background-color: #0083c9;
+    background-image: url("https://www.transparenttextures.com/patterns/black-thread-light.png");
     
 }
 
@@ -13,4 +15,8 @@ body{
 table{
     background-color: #fff;
     color: #45b3e7;
+}
+
+.panel{
+    color: #0083c9;
 }

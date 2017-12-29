@@ -12,9 +12,13 @@
 */
 
 Route::get('/posts', 'PostsController@index');
-Route::get('/posts', 'PostsController@index');
-Route::get('/categories', 'CategoriesController@index');
+Route::get('/posts/{post}', 'PostsController@show');
+Route::get('/create', 'PostsController@create')->middleware('auth');
+Route::get('/categories', 'CategoriesController@index')->middleware('auth');
 Route::get('/categories/{category}', 'CategoriesController@show');
+
+Route::post('/posts', 'PostsController@store');
+
 
 Auth::routes();
 
