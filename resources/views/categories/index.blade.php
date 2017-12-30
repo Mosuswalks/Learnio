@@ -1,13 +1,29 @@
 @extends('layouts.master')
 
 @section('content')
-<div class="container"> 
-        <div class="list-group col-sm-6 mx-auto">
-            <h1 class="text-center list-group-item">Categories</h1>
-                @foreach ($categories as $category)
-                    <a class="col-sm-3 list-group-item" href="/categories/{{ $category->id }}" class="list-group-item list-group-item-action"><h3> {{ $category->title }}</h3><h6>{{ $category->description }}</h6></a>
-                @endforeach
+<div class="container">
+        <div class="jumbotron">
+                <div class="container">
+                  <h1 class="display-3">Categories</h1>
+                  <p>Getting started is as simple as choosing a path that interests you, or if you don't see anything that interests you, why not create your own path.</p>
+                  <p><a class="btn btn-primary btn-lg" href="/create" role="button">Create Path &raquo;</a></p>
+                </div>
         </div>
-</div>
+          
+<div class="container row">
+        
+        <div class="panel col-sm-12"  style="background-color: #fff;">
+                @foreach ($categories as $category)
+                  <a class="hover"href="/categories/{{ $category->id }}">
+                    <div class="col-sm-3">
+                        
+                        <h2>{{ $category->title }}</h2>
+                        <p>{{ $category->description }}</p>
 
+                    </div>
+                    </a> 
+                    @endforeach
+              </div> <!-- /container -->
+            </div>
+</div>
 @endsection 

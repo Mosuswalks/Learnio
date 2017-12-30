@@ -4,6 +4,8 @@ namespace Learnio\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Learnio\Category;
+use Learnio\Post;
+
 class PostsController extends Controller
 {
     /**
@@ -54,11 +56,9 @@ class PostsController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show(Post $post)
     {
-        $post = \Learnio\Post::find($id);
         $user = \Learnio\User::find($post->user_id);
-
         return view('posts.show',compact('post','user'));
     }
 

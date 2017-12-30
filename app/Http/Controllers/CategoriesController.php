@@ -3,7 +3,6 @@
 namespace Learnio\Http\Controllers;
 
 use Learnio\Category;
-use Learnio\Post;
 
 
 class CategoriesController extends Controller
@@ -17,7 +16,12 @@ class CategoriesController extends Controller
 
     public function show(Category $category)
     {    
-        $postsForCategory = Post::where('categories_id','=',$category->id)->get();
+        $postsForCategory = \Learnio\Post::where('categories_id','=',$category->id)->latest()->get();
+
+        //dd($postsForCategory);
+
+        //$users = \Learnio\User::where('id','=' ,$postsForCategory->user_id)->get();
+
         return view('categories.show', compact('category','postsForCategory'));
     }
 

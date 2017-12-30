@@ -6,7 +6,7 @@
             <div class="col-md-8 col-md-offset-2">
                 <div class="panel panel-default col-md-12">
 
-                    <h1 class="text-center">Create a Path</h1>
+                    <h1 class="text-center"><i class="fas fa-pen-square"></i> Create a Path</h1>
                     <hr>
 
                     <form method="POST" action="/posts">

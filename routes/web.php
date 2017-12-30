@@ -10,14 +10,14 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
-
 Route::get('/posts', 'PostsController@index');
 Route::get('/posts/{post}', 'PostsController@show');
 Route::get('/create', 'PostsController@create')->middleware('auth');
 Route::get('/categories', 'CategoriesController@index')->middleware('auth');
 Route::get('/categories/{category}', 'CategoriesController@show');
-
 Route::post('/posts', 'PostsController@store');
+
+Route::post('/posts/{post}/comments', 'CommentsController@store');
 
 
 Auth::routes();
