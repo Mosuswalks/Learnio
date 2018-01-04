@@ -27,8 +27,13 @@ class User extends Authenticatable
         'password', 'remember_token',
     ];
 
-    public function likedPosts()
+    public function posts()
     {
-    return $this->morphedByMany('App\Post', 'likeable')->whereDeletedAt(null);
+        return $this->hasMany(Post::class);
+    }
+
+    public function comments()
+    {
+        return $this->hasMany(Comment::class);
     }
 }

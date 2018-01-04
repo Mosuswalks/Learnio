@@ -15,7 +15,10 @@
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     <link href="{{ asset('css/style.css') }}" rel="stylesheet">
     <script defer src="https://use.fontawesome.com/releases/v5.0.2/js/all.js"></script>
-    
+    <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/npm/animate.css@3.5.2/animate.min.css">
+        
+
 </head>
 <body>
     <div id="app">

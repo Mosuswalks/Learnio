@@ -2,12 +2,12 @@
 
 @section('content')
     <div class="container">
-        <div class="panel col-md-10 col-md-offset-1">
+        <div class="panel col-md-10 col-md-offset-1 animated fadeIn">
 
             <div class="panel-title">
                 
             <h1 class="text-center">{{ $post->title }}</h1>
-            <h3 class="text-center"> <i class="fas fa-user-circle"></i> {{ $user->name }}</h3>
+            <h3 class="text-center"> <i class="fas fa-user-circle"></i> {{ $post->user->name }}</h3>
             <h4 class="text-center"><i class="far fa-calendar-alt"></i> {{ $post->created_at->toFormattedDateString() }}</h4>
             </div>
             <hr>
@@ -24,6 +24,8 @@
                         <li class="list-group-item">
                             <strong>
                                 {{ $comment->created_at->diffForHumans() }}
+                                &nbsp- 
+                                {{  $comment->user->name }}:
                             </strong>
                             &nbsp
                                 {{ $comment->body }}

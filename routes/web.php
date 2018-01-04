@@ -20,6 +20,7 @@ Route::post('/posts', 'PostsController@store');
 Route::post('/posts/{post}/comments', 'CommentsController@store');
 
 
+
 Auth::routes();
 
-Route::get('/', 'HomeController@index')->name('home');
+Route::get('/home', 'HomeController@index')->name('home');
