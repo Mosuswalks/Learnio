@@ -3,6 +3,7 @@
 namespace Learnio\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Gate;
 use Learnio\Category;
 use Learnio\Post;
 
@@ -25,7 +26,7 @@ class PostsController extends Controller
      */
     public function create()
     {
-        $categories = \Learnio\Category::all();
+        $categories = Category::all();
         return view('/posts/create',compact('categories'));
     }
 
@@ -37,7 +38,7 @@ class PostsController extends Controller
      */
     public function store(Request $request)
     {
-        $post = new \Learnio\Post;
+        $post = new Post;
 
         $post->user_id = request('user_id');
         $post->categories_id = request('category');
@@ -58,8 +59,7 @@ class PostsController extends Controller
      */
     public function show(Post $post)
     {
-        $user = \Learnio\User::find($post->user_id);
-        return view('posts.show',compact('post','user'));
+        return view('posts.show',compact('post'));
     }
 
     /**
@@ -68,9 +68,17 @@ class PostsController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(Post $post)
     {
-        //
+
+        if(Gate::denies('edit-post', $post))
+        {
+            redirect('/categories');
+        }
+
+        $categories = Category::all();
+        return view('posts.edit',compact('post','categories'));
+        
     }
 
     /**
@@ -80,9 +88,15 @@ class PostsController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request,$id)
     {
-        //
+        $post = Post::find($id);
+        $post->title = request('title');
+        $post->categories_id = request('category');
+        $post->body = request('body');
+
+        $post->save();
+        return redirect('/categories');
     }
 
     /**
@@ -93,6 +107,10 @@ class PostsController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $post = Post::find($id);
+        $cat_id = $post->categories_id;
+        $post->delete();
+
+        return redirect('/categories/{{cat_id}}');
     }
 }

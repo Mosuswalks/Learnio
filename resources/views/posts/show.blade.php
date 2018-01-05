@@ -6,20 +6,46 @@
 
             <div class="panel-title">
                 
-            <h1 class="text-center">{{ $post->title }}</h1>
-            <h3 class="text-center"> <i class="fas fa-user-circle"></i> {{ $post->user->name }}</h3>
-            <h4 class="text-center"><i class="far fa-calendar-alt"></i> {{ $post->created_at->toFormattedDateString() }}</h4>
+                <h1 class="text-center">{{ $post->title }}</h1>
+                <h3 class="text-center"> <i class="fas fa-user-circle"></i> {{ $post->user->name }}</h3>
+                <h4 class="text-center"><i class="far fa-calendar-alt"></i> {{ $post->created_at->toFormattedDateString() }}</h4>
+
             </div>
-            <hr>
+
+                <hr>
+
             <div class="panel-body">
 
-                <p class=''>{{$post->body}}</p>
+                <p>{!! nl2br(e($post->body)) !!}</p>
                 
             </div>
+
+            <div class="text-center" id="vote">
+
+                <!--Will only display the edit and delete button if the current authenticated user is the same user who posted it.
+                    A gate is also used on the controller to ensure that even if the id's are changed in browser it will not allow editing. -->
+                @if(Auth::id() == $post->user_id)
+                    <form method="POST" action="/posts/{{ $post->id }}/delete">
+                        {{ csrf_field() }}
+                        {{ method_field('DELETE') }}
+
+                        <a href="/posts/{{ $post->id }}/edit" class="btn btn-primary">Edit</a>
+                        <button class="btn btn-danger" method="post">Delete</button>
+                        
+                    </form>
+
+                @endif
+
+                <strong><h2>Did you find this helpful?</h2></strong>
+                <a ><i class="fas fa-caret-up fa-3x"></i></a> vote count here  <a><i class="fas fa-caret-down fa-3x"></i></a>
+
+            </div>
+
             <hr>
+
             <div class="comments">
                 <ul class="list-group">
-                    <h3>Comments</h3>
+                    <h3>Comments</h3> 
                     @foreach($post->comments->sortByDesc('created_at') as $comment)
                         <li class="list-group-item">
                             <strong>
@@ -27,7 +53,7 @@
                                 &nbsp- 
                                 {{  $comment->user->name }}:
                             </strong>
-                            &nbsp
+                                &nbsp
                                 {{ $comment->body }}
 
                         </li>
@@ -58,6 +84,8 @@
     
 
                     </form>
+
+
 
                     @include('layouts.errors')
 

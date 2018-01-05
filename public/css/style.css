@@ -2,14 +2,43 @@ body{
     background-color: #3221;
     min-width: 100%;
     min-height: 100%;
-    position: fixed; 
     top: 0; 
     left: 0; 
-    background-color: #0083c9;
-    background-image: url("https://www.transparenttextures.com/patterns/black-thread-light.png");
-    
+    background-image: url('/images/HappyFisher.png');
+   
 }
 
+
+/* ---------------- Category Page Styling ------------------- */
+
+#catJumbo{
+    background-color: rgba(255,255,255, 0.5);
+    color: #363636;
+    margin-top: 20px;
+    /* fix shadow hover */
+    box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+    transition: all 0.3s cubic-bezier(.25,.8,.25,1);
+}
+#catJumbo a :hover{
+    background-color: #1abc9c;
+}
+
+#catJumbo p{
+    color: #333;
+}
+
+#catCards{
+    border-radius: 8px;
+    background-color: #9b59b6;
+    color: #fff;
+    width: 25rem;
+    padding: 15px;
+    margin-top: 30px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+    transition: all 0.3s cubic-bezier(.25,.8,.25,1);
+}
+
+/* ----------------End of Category Page Styling ------------------- */
 
 
 table{
