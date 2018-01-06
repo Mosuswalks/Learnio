@@ -3,14 +3,14 @@
 @section('content')
     <div class="container">
             <div class="panel panel-default text-center animated fadeInDown" >
+                <i class="{{ $category->icon }}"></i>
                 <h1 class="">{{ $category->title }}</h1>
-                <p>{{ $category->description}}</p>
-                <hr>
+                <p>{{ $category->description }}</p>
             </div>
             <div class="card-deck">
             @foreach ($postsForCategory as $post)
             <div class="col-sm-3 animated fadeInUp text-center">
-                <div class="card col-sm-4" style="width: 25rem ;border-radius: 8px; background-color: #616161; color: #fff; margin-top: 15px">
+                <div class="card col-sm-4" style="width: 25rem ;border-radius: 8px; background-color: #16a085; color: #fff; margin-top: 15px">
                     
                     <div class="card-block">
                         <h2 class="card-title"><strong>{{ $post->title }}</strong></h3>

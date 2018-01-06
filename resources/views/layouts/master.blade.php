@@ -14,6 +14,8 @@
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     <link href="{{ asset('css/style.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/footer-style.css') }}" rel="stylesheet">
+
 
     <!-- Fonts and Icons -->
     <script defer src="https://use.fontawesome.com/releases/v5.0.2/js/all.js"></script>
@@ -88,14 +90,14 @@
                 </div>
             </div>
         </nav>
-
+        
         @yield('content')
-    </div>
+                
 
+    </div>
+    @extends('layouts.footer')
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}"></script>
-    <footer>
-        <p>Learnio 2017-2018
-    </footer>
+    
 </body>
 </html>

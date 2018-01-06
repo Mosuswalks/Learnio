@@ -31,14 +31,25 @@
 
                         <a href="/posts/{{ $post->id }}/edit" class="btn btn-primary">Edit</a>
                         <button class="btn btn-danger" method="post">Delete</button>
-                        
+
                     </form>
 
                 @endif
 
                 <strong><h2>Did you find this helpful?</h2></strong>
-                <a ><i class="fas fa-caret-up fa-3x"></i></a> vote count here  <a><i class="fas fa-caret-down fa-3x"></i></a>
 
+                <div>
+
+                <form method="POST" action="/posts/{{ $post->id }}/vote">
+
+                        <a class="btn" value="1"><i class="fas fa-caret-up fa-3x"></i></a>
+
+                        <span class="label label-primary" style="font-size: 25px;">{{ $votes }}</span>
+
+                        <a class="btn" value="-1"><i class="fas fa-caret-down fa-3x"></i></a>
+                </form>
+            </div>
+                    
             </div>
 
             <hr>

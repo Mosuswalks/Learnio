@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Gate;
 use Learnio\Category;
 use Learnio\Post;
+use Learnio\Vote;
 
 class PostsController extends Controller
 {
@@ -59,7 +60,10 @@ class PostsController extends Controller
      */
     public function show(Post $post)
     {
-        return view('posts.show',compact('post'));
+        $votes = Vote::getVotes($post->id);
+        
+
+        return view('posts.show',compact('post','votes'));
     }
 
     /**
