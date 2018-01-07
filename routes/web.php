@@ -29,6 +29,7 @@ Route::get('/categories/{category}', 'CategoriesController@show');
 Route::post('/posts', 'PostsController@store');
 
 
+Route::get('/posts/{post}/votes', 'VotesController@votes');
 
 Route::post('/posts/{post}/comments', 'CommentsController@store');
 

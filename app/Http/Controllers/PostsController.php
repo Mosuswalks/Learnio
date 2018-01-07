@@ -60,10 +60,10 @@ class PostsController extends Controller
      */
     public function show(Post $post)
     {
-        $votes = Vote::getVotes($post->id);
+        //$votes = Vote::getVotes($post->id);
         
 
-        return view('posts.show',compact('post','votes'));
+        return view('posts.show',compact('post'));
     }
 
     /**

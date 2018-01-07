@@ -1,10 +1,15 @@
 @extends('layouts.master')
 
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+    <script src="/js/app.js"></script>
+
+
 @section('content')
     <div class="container">
-        <div class="panel col-md-10 col-md-offset-1 animated fadeIn">
+        <div class="card-block col-md-10 col-md-offset-1 animated fadeIn">
 
-            <div class="panel-title">
+            <div class="card-title">
                 
                 <h1 class="text-center">{{ $post->title }}</h1>
                 <h3 class="text-center"> <i class="fas fa-user-circle"></i> {{ $post->user->name }}</h3>
@@ -14,17 +19,40 @@
 
                 <hr>
 
-            <div class="panel-body">
+            <div class="card-text">
 
                 <p>{!! nl2br(e($post->body)) !!}</p>
                 
             </div>
 
-            <div class="text-center" id="vote">
+            
+            <!-- BOTH ARE VOTE REMEMBER TO CHANGE ONE ID -->
+            <div class="card-text text-center" id="vote">
 
                 <!--Will only display the edit and delete button if the current authenticated user is the same user who posted it.
                     A gate is also used on the controller to ensure that even if the id's are changed in browser it will not allow editing. -->
-                @if(Auth::id() == $post->user_id)
+                
+                <strong><h2>Did you find this helpful?</h2></strong>
+
+                <div>
+
+                <div id="vote">
+
+                    <form method="POST" action="/posts/{{ $post->id }}/vote">
+
+                            <a class="btn animated tada" value="1"><i class="far fa-thumbs-up fa-3x"></i></a>
+
+                            <span class="label label-primary animated fadeInUp" style="font-size: 25px;">@{{ votes }}</span>
+
+                            <a class="btn animated tada" value="-1"><i class="far fa-thumbs-down fa-3x"></i></a>
+                    </form>
+
+                </div>
+
+            </div>
+
+            @if(Auth::id() == $post->user_id)
+                <br>
                     <form method="POST" action="/posts/{{ $post->id }}/delete">
                         {{ csrf_field() }}
                         {{ method_field('DELETE') }}
@@ -36,19 +64,6 @@
 
                 @endif
 
-                <strong><h2>Did you find this helpful?</h2></strong>
-
-                <div>
-
-                <form method="POST" action="/posts/{{ $post->id }}/vote">
-
-                        <a class="btn" value="1"><i class="fas fa-caret-up fa-3x"></i></a>
-
-                        <span class="label label-primary" style="font-size: 25px;">{{ $votes }}</span>
-
-                        <a class="btn" value="-1"><i class="fas fa-caret-down fa-3x"></i></a>
-                </form>
-            </div>
                     
             </div>
 
@@ -69,6 +84,7 @@
 
                         </li>
                     @endforeach
+
             </div>
 
             <hr>

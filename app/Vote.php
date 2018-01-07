@@ -18,12 +18,5 @@ class Vote extends Model
         return $this->belongsTo(Post::class);
     }
 
-    public static function getVotes($id)
-    {
-        $votes = Vote::where('post_id', '=', $id)->sum('vote');
-
-        return $votes;
-    }
-
     
 }

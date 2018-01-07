@@ -16,14 +16,16 @@
     <link href="{{ asset('css/style.css') }}" rel="stylesheet">
     <link href="{{ asset('css/footer-style.css') }}" rel="stylesheet">
 
+    <!-- Vue/Axios -->
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+
 
     <!-- Fonts and Icons -->
     <script defer src="https://use.fontawesome.com/releases/v5.0.2/js/all.js"></script>
 
     <!-- Animations -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.5.2/animate.min.css">
-    <script src="js/wow.min.js"></script>
-    <script> new WOW().init(); </script>
         
 
 </head>
