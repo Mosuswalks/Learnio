@@ -1,17 +1,16 @@
 <template>
-    <div id="vote">
-
-        <form method="POST" action="/posts/{{ $post->id }}/vote">
-
-             <a class="btn" value="1"><i class="far fa-thumbs-up fa-3x"></i></a>
-
-                <span class="label label-primary" style="font-size: 25px;">{{ $votes }}</span>
-
-            <a class="btn" value="-1"><i class="far fa-thumbs-down fa-3x"></i></a>
-            
-        </form>
-
-    </div>
+    <div class="container">
+ -        <div class="row">
+ -            <div class="col-md-8 col-md-offset-2">
+ -                <div class="panel panel-default">
+ -                    <div class="panel-heading">Example Component</div>
+                <div class="panel-body">
+ -                        I'm an example component!-
+ -                    </div>
+ -                </div>
+ -            </div>
+ -        </div>
+ </div>
 </template>
 
 <script>

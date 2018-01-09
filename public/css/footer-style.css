@@ -1,11 +1,7 @@
-#myFooter {
-	background-color: #373a48;
-	color:white;
-	margin-top: 5rem;
-}
+
 
 #myFooter .footer-copyright{
-	background-color: #383737;
+	background-color: #bdc3c7;
 	padding-top:3px;
 	padding-bottom:3px;
 	text-align: center;
@@ -87,19 +83,6 @@
 /* CSS used for positioning the footers at the bottom of the page. */
 /* You can remove this. */
 
-/*
-html{
-	height: 100% !important;
-}
-
-body{
-    display: flex;
-    display: -webkit-flex;
-    flex-direction: column;
-    -webkit-flex-direction: column;
-    height: 100%;
-}
-
 .content{
 	flex: 1 0 auto;
 	-webkit-flex: 1 0 auto;
@@ -108,5 +91,13 @@ body{
 
 #myFooter{
 	flex: 0 0 auto;
-    -webkit-flex: 0 0 auto;
-}*/
+	-webkit-flex: 0 0 auto;
+	position: relative;
+	left: 0;
+	bottom: 0;
+	width: 100%;
+	background-color: #2980b9;
+	color: #00aced;
+	margin-top: 65px;
+	overflow: hidden;
+}

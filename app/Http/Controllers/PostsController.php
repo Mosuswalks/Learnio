@@ -59,10 +59,7 @@ class PostsController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function show(Post $post)
-    {
-        //$votes = Vote::getVotes($post->id);
-        
-
+    {   
         return view('posts.show',compact('post'));
     }
 

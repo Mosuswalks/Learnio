@@ -16,13 +16,6 @@
     <link href="{{ asset('css/style.css') }}" rel="stylesheet">
     <link href="{{ asset('css/footer-style.css') }}" rel="stylesheet">
 
-    <!-- Vue/Axios -->
-    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/vue"></script>
-
-
-    <!-- Fonts and Icons -->
-    <script defer src="https://use.fontawesome.com/releases/v5.0.2/js/all.js"></script>
 
     <!-- Animations -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.5.2/animate.min.css">
@@ -31,7 +24,7 @@
 </head>
 <body>
     <div id="app">
-        <nav class="navbar navbar-inverse navbar-static-top">
+        <nav class="navbar navbar-default navbar-static-top">
             <div class="container">
                 <div class="navbar-header">
 
@@ -54,10 +47,9 @@
                 <div class="collapse navbar-collapse" id="app-navbar-collapse">
                     <!-- Left Side Of Navbar -->
                     <ul class="nav navbar-nav">
-                        <li><a href="/categories">View</a><li>
-                        &nbsp;
-                        <li><a href="/create">Create</a><li>
-                        
+                        <li class="{{ Request::path() ==  '/' ? 'active' : ''  }}"><a href="/">Home</a><li>
+                        <li class="{{ Request::path() ==  'categories' ? 'active' : ''  }}"><a href="/categories">Categories</a><li>
+                        <li class="{{ Request::path() ==  'create' ? 'active' : ''  }}"><a href="/create">Create</a><li>
                         
                     </ul>
 
@@ -75,6 +67,11 @@
 
                                 <ul class="dropdown-menu">
                                     <li>
+                                        
+                                        <a href="{{ route('home')}}">
+                                            Dashboard
+                                        </a>
+
                                         <a href="{{ route('logout') }}"
                                             onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
@@ -92,14 +89,23 @@
                 </div>
             </div>
         </nav>
-        
-        @yield('content')
-                
+        <div class="mainContent">
+            @yield('content')
+        </div>
 
     </div>
     @extends('layouts.footer')
+    
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+    <script src="{{ asset('js/vote.js') }}"></script>
+    
+
+    <!-- Fonts and Icons -->
+    <script defer src="https://use.fontawesome.com/releases/v5.0.2/js/all.js"></script>
+    
     
 </body>
 </html>

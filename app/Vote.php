@@ -7,7 +7,6 @@ use Illuminate\Database\Eloquent\Model;
 class Vote extends Model
 {
 
-
     public function user()
     {
         return $this->belongsTo(User::class);
@@ -17,6 +16,8 @@ class Vote extends Model
     {
         return $this->belongsTo(Post::class);
     }
+
+
 
     
 }

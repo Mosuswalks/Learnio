@@ -1,16 +1,15 @@
 @extends('layouts.master')
 
 @section('content')
-<div class="container">
-        <div class="jumbotron animated fadeInDown" id="catJumbo">
+        <div class="jumbotron jumbotron-fluid animated fadeInDown" id="catJumbo">
                 <div class="container">
                   <h1 class="display-3">Categories</h1>
                   <p>Getting started is as simple as choosing a path that interests you, or if you don't see anything that interests you, why not create your own path.</p>
                   <p><a class="btn btn-primary btn-lg" href="/create" role="button">Create Path &raquo;</a></p>
                 </div>
         </div>
-          
-        <div class="card-deck">
+    <div class="container">
+        <div class="card-deck catCards">
 
                 @foreach ($categories as $category)
 
@@ -28,9 +27,8 @@
                         
                     </div>
                 </div>
-
                 @endforeach
         </div>
-</div>
+    </div>
 
 @endsection 

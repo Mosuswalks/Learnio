@@ -19,6 +19,7 @@ class CategoriesController extends Controller
     {   
         $postsForCategory = Post::where('categories_id','=',$category->id)->latest()->get();
 
+      
         return view('categories.show', compact('category','postsForCategory'));
     }
 
